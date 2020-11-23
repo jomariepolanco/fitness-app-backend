@@ -5,12 +5,12 @@ class Api::StatsController < ApplicationController
   def index
     @stats = Stat.all
 
-    render json: @stats
+    render json: @stats, except: [:created_at, :updated_at]
   end
 
   # GET /stats/1
   def show
-    render json: @stat
+    render json: @stat, except: [:created_at, :updated_at]
   end
 
   # POST /stats

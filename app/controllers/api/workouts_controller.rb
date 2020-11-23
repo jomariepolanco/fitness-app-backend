@@ -5,12 +5,12 @@ class Api::WorkoutsController < ApplicationController
   def index
     @workouts = Workout.all
 
-    render json: @workouts
+    render json: @workouts, except: [:created_at, :updated_at]
   end
 
   # GET /workouts/1
   def show
-    render json: @workout
+    render json: @workout, except: [:created_at, :updated_at]
   end
 
   # POST /workouts

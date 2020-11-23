@@ -5,12 +5,12 @@ class Api::ExercisesController < ApplicationController
   def index
     @exercises = Exercise.all
 
-    render json: @exercises
+    render json: @exercises, except: [:created_at, :updated_at]
   end
 
   # GET /exercises/1
   def show
-    render json: @exercise
+    render json: @exercise, except: [:created_at, :updated_at]
   end
 
   # POST /exercises

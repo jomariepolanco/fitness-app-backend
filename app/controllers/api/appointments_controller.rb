@@ -5,12 +5,12 @@ class Api::AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.all
 
-    render json: @appointments
+    render json: @appointments, except: [:created_at, :updated_at]
   end
 
   # GET /appointments/1
   def show
-    render json: @appointment
+    render json: @appointment, except: [:created_at, :updated_at]
   end
 
   # POST /appointments
